@@ -3,22 +3,18 @@
 
 using namespace std;
 
-int duplicate(vector<int>arr){
-    while (arr[0]!=arr[arr[0]])
-    {
-        swap(arr[0],arr[arr[arr[0]]]);
+int findDuplicate(vector<int>& arr) {
+    while (arr[0] != arr[arr[0]]) {
+        swap(arr[0], arr[arr[0]]);
     }
     return arr[0];
-    
-
 }
 
 int main() {
+    vector<int> arr{1, 3, 4, 2, 2};  // Example array with one duplicate number
 
-    vector<int>arr{1,2,2,3,4,5};
+    int ans = findDuplicate(arr);
+    cout << "Duplicate number: " << ans << endl;
 
-    int ans=duplicate(arr);
-    cout<<ans;
- 
     return 0;
 }
