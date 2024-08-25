@@ -16,7 +16,6 @@ int countPrime(int n){
         if (prime[i])
         {
             ans++;
-
             int j=2*i;
             while (j<n){
                 prime[j]=false;
