@@ -6,7 +6,8 @@ void printNumber(int num){
         return;
     }
 
-    int number=
+    int number=num%10;
+    cout<<number;
     
 
     int newValue=num/10;
