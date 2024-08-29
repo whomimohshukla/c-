@@ -10,9 +10,7 @@ int main(){
     cout<<"Enter a number:";
     int n;
     cin>>n;
-
     int ans=howToClimb(n);
     cout<<"Number of ways to climb "<<n<<" stairs is "<<ans;
-
     return 0;
 }
