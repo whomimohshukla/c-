@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-void lastOccurance(string &str, char target, int index, int &ans) {
+void lastOccuranceLTR(string &str, char target, int index, int &ans) {
     // Base condition: stop if index is equal to the length of the string
     if (index == str.length()) {
         return;
@@ -11,8 +11,10 @@ void lastOccurance(string &str, char target, int index, int &ans) {
         ans = index;
     }
     // Recurse to the next character
-    lastOccurance(str, target, index + 1, ans);
+    lastOccuranceLTR(str, target, index + 1, ans);
 }
+
+
 
 int main() {
     string str = "abcddedg";
@@ -21,7 +23,7 @@ int main() {
     int ans = -1;
     int index = 0;
 
-    lastOccurance(str, target, index, ans);
+    lastOccuranceLTR(str, target, index, ans);
     cout << ans;
 
     return 0;
