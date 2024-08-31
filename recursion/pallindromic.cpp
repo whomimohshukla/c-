@@ -26,10 +26,6 @@ int main(){
     else{
         cout<<"The string is not a pallindrome"<<endl;
     }
-    
-
-
-
 
     return 0;
 }
