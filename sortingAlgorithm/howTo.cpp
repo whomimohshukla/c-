@@ -1,8 +1,6 @@
 #include<iostream>
 using namespace std;
-
-void merge(int* arr,int start,int end){
-    int mid=(start+end)/2;
+void merge(int arr[],int start,int end,int mid){
 
     int length1=mid-start+1;
     int length2=end-mid;
@@ -10,88 +8,71 @@ void merge(int* arr,int start,int end){
     int*left=new int[length1];
     // creating one array (dynamic array) of length length2 and named right
     int*right=new int[length2];
-
-    //copying values of left array(unsorted) and right(unsorted) in new array left and right 
-
-
+    // copying data from arr[start] to arr[mid] to left array
     int k=start;
     for(int i=0;i<length1;i++){
         left[i]=arr[k];
         k++;
+
     }
-    k=mid+1;
+    // copying data from arr[mid+1] to arr[end] to right array
+    int k1=mid+1;
     for(int i=0;i<length2;i++){
-        right[i]=arr[k];
-        k++;
+        right[i]=arr[k1];
+        k1++;
     }
-
-
-    // merge to sorted array in one single sorted array
-    int leftIndex=0;
-    int rightIndex=0;
-    int arrIndex=start;
-
-    while (leftIndex<length1 && rightIndex<length2)
-    {
-        if(left[leftIndex]<=right[rightIndex]){
-            arr[arrIndex++]=left[leftIndex++];
-           
+    // merging left and right array
+    int startIngIndexOfLeft=0;
+    int startIngIndexOfRight=0;
+    int startIngIndexOfMergedArray=start;
+    while(startIngIndexOfLeft<length1 && startIngIndexOfRight<length2){
+        if(left[startIngIndexOfLeft]<=right[startIngIndexOfRight]){
+            arr[startIngIndexOfMergedArray++]=left[startIngIndexOfLeft++];
         }
         else{
-            arr[arrIndex++]=right[rightIndex++]; 
+            arr[startIngIndexOfMergedArray++]=right[startIngIndexOfRight++];
         }
-       
     }
-
-    //copy logic for left array
-    while(leftIndex<length1){
-        arr[arrIndex++]=left[leftIndex++];
+    // copying remaining elements of left array to arr
+    while(startIngIndexOfLeft<length1){
+        arr[startIngIndexOfMergedArray++]=left[startIngIndexOfLeft++];
     }
-    
-    //copy logic for right array
-    while(rightIndex<length2){
-        arr[arrIndex++]=right[rightIndex++];
+    // copying remaining elements of right array to arr
+    while(startIngIndexOfRight<length2){
+        arr[startIngIndexOfMergedArray++]=right[startIngIndexOfRight++];
     }
-    //delete dynamically created array
-    delete []left;
-    delete []right;
+    delete[]left;
+    delete[]right;
 
-    
-    
-
-
-
-
-}void mergeSOrt(int* arr,int start,int end){
+}
+void mergeSort(int arr[],int start, int end){
     // base case 
-    if(start>=end){
-        return ;
-    }
+    if(start>=end)  return ;
+
+    // find the mid    
     int mid=(start+end)/2;
 
-    // left side of array handling by recursion
-    mergeSOrt(arr,start,mid);
+    // divide the original array into subarrays (left)
+    mergeSort(arr,start,mid);
+    // divide the original array into subarrays (right)
+    mergeSort(arr,mid+1,end);
+    // merge the subarrays (left and right)
+    merge(arr,start,end,mid);
+   
 
-    // right side will wehandle recursively itself
-    mergeSOrt(arr,mid+1,end);
-
-    //merge to sorted array which is divide later before 
-    merge(arr,start,end);
 }
 int main(){
-    int arr[]={4,5,13,2,12};
+    int arr[]={ 12, 11, 13, 5, 6, 7 };
     int n = sizeof(arr)/sizeof(arr[0]);
+
     int start=0;
     int end=n-1;
 
-    mergeSOrt(arr,start,end);
+    mergeSort(arr,start,end);
 
-    for (int i = 0; i <n; i++)
-    {
+    for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    
-
     return 0;
 }
