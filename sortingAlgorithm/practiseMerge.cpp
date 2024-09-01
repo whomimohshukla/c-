@@ -2,38 +2,47 @@
 using namespace std;
 void merge(int arr[],int start,int end,int mid){
 
-    // finding the subArray size
-    int length1 = mid - start + 1;
-    int length2 = end - mid;
-
+    int length1=mid-start+1;
+    int length2=end-mid;
     // creating one array (dynamic array) of length length1 and named left
     int*left=new int[length1];
     // creating one array (dynamic array) of length length2 and named right
     int*right=new int[length2];
-
-
-    //copying the values
-
+    // copying data from arr[start] to arr[mid] to left array
     int k=start;
     for(int i=0;i<length1;i++){
         left[i]=arr[k];
         k++;
+
     }
-    k=mid+1;
+    // copying data from arr[mid+1] to arr[end] to right array
+    int k1=mid+1;
     for(int i=0;i<length2;i++){
-        right[i]=arr[k];
-        k++;
+        right[i]=arr[k1];
+        k1++;
     }
-
-    int indexOfLeft=0;
-    int indexOfRight=0;
-    int indexOfOriginal=start;
-    // merging the two arrays
-    while(indexOfLeft<length1 && indexOfRight<length2){
-        
-
-   
-
+    // merging left and right array
+    int startIngIndexOfLeft=0;
+    int startIngIndexOfRight=0;
+    int startIngIndexOfMergedArray=start;
+    while(startIngIndexOfLeft<length1 && startIngIndexOfRight<length2){
+        if(left[startIngIndexOfLeft]<=right[startIngIndexOfRight]){
+            arr[startIngIndexOfMergedArray++]=left[startIngIndexOfLeft++];
+        }
+        else{
+            arr[startIngIndexOfMergedArray++]=right[startIngIndexOfRight++];
+        }
+    }
+    // copying remaining elements of left array to arr
+    while(startIngIndexOfLeft<length1){
+        arr[startIngIndexOfMergedArray++]=left[startIngIndexOfLeft++];
+    }
+    // copying remaining elements of right array to arr
+    while(startIngIndexOfRight<length2){
+        arr[startIngIndexOfMergedArray++]=right[startIngIndexOfRight++];
+    }
+    delete[]left;
+    delete[]right;
 
 }
 void mergeSort(int arr[],int start, int end){
