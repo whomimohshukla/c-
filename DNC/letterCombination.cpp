@@ -46,10 +46,5 @@ int main(){
         {
             cout<<ans[i]<<endl;
         }
-        
-
-       
-
-
     return 0;
 }
