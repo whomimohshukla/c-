@@ -31,33 +31,38 @@ class animal {
         void setWeight(int w) {
             weight = w;
         }
+
+        // constructor
+        animal(){
+            cout<<"constructor called";
+        }
 };
 
 int main() {
-    // Object creation of the class 'animal'
-    animal dog;  // An object 'dog' of type 'animal' is created
+    // // Object creation of the class 'animal'
+    // animal dog;  // An object 'dog' of type 'animal' is created
 
-    // Setting public attributes 'name' and 'age' of the object 'dog'
-    dog.name = "Bella";  // Setting the name of the dog to "Bella"
-    dog.age = 3;         // Setting the age of the dog to 3
+    // // Setting public attributes 'name' and 'age' of the object 'dog'
+    // dog.name = "Bella";  // Setting the name of the dog to "Bella"
+    // dog.age = 3;         // Setting the age of the dog to 3
 
-    // Outputting the dog's attributes
-    cout << "age of dog is: " << dog.age << endl;      // Printing the dog's age
-    cout << "name of dog is: " << dog.name << endl;    // Printing the dog's name
+    // // Outputting the dog's attributes
+    // cout << "age of dog is: " << dog.age << endl;      // Printing the dog's age
+    // cout << "name of dog is: " << dog.name << endl;    // Printing the dog's name
 
-    // Calling public methods 'sleep' and 'eat' on the object 'dog'
-    dog.sleep();  // Dog is sleeping (method call)
-    dog.eat();    // Dog is eating (method call)
+    // // Calling public methods 'sleep' and 'eat' on the object 'dog'
+    // dog.sleep();  // Dog is sleeping (method call)
+    // dog.eat();    // Dog is eating (method call)
 
-    // Setting and retrieving the dog's weight using the setter and getter methods
-    dog.setWeight(10);   // Setting the dog's weight to 10
-    cout << "weight of dog is: " << dog.getWeight() << endl;  // Printing the dog's weight
+    // // Setting and retrieving the dog's weight using the setter and getter methods
+    // dog.setWeight(10);   // Setting the dog's weight to 10
+    // cout << "weight of dog is: " << dog.getWeight() << endl;  // Printing the dog's weight
 
 
-    // dynamic memory allocation
-    animal *lion=new animal;
+    // // dynamic memory allocation
+    // animal *lion=new animal;
     
-    lion->name="Simba";
+    // lion->name="Simba";
 
 
     return 0;  // End of program
