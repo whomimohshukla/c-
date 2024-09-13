@@ -6,6 +6,8 @@ int hcf(int a,int b){
     if (a==0)
     return b;
     while (a>0 && b>0)
+    //whomimohshukla
+    
     {
         if (a>b)
         { 
