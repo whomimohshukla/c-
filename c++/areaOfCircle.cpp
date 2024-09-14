@@ -15,5 +15,6 @@ int main(){
     cout <<"Enter a radius :";
     cin >> radius;
     cout << "the area of circle is :" << areaOfcircle(radius) << endl;
+    // cout << "the area of circle is :" << areaOfcircle(radius) << endl;
 
 }
