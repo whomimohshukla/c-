@@ -40,6 +40,5 @@ int main(){
     }
     else{
         cout<<"Element is present in array"<<endl;
-    }
-    
+    }  
 }
