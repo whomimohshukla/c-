@@ -6,19 +6,21 @@ void waveMatrixPrint(vector<vector<int>>arr){
     int m=arr.size();
     // cout<<1%2;
     int n=arr[0].size();
-    // cout<<n;
+
+   
+    cout<<n;
     for (int startCol = 0; startCol < n; startCol++)
     {
         if (startCol % 2 == 0){
             for (int i = 0; i < m; i++){
-                cout << arr[i][startCol] << " ";
+                // cout << arr[i][startCol] << " ";
             }
 
 
         }
         else{
             for (int i = m - 1; i >= 0; i--){
-                cout << arr[i][startCol] << " ";
+                // cout << arr[i][startCol] << " ";
             }
     }
     }
