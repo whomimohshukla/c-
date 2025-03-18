@@ -12,6 +12,26 @@ class Animal{
     string name;
 
     string type;
+     /// construcotr
+
+     Animal(){
+
+        this->weight=0;
+        this->age=0;
+        cout<<"Constructor called"<<endl;
+     }
+
+     //parameterized constructor
+
+     Animal(int age){
+        this->age=age;
+        cout<<"Parameterised Constructor called"<<endl;
+     }
+
+     //copy constructor
+    //  Animal (Animal obj){
+    //     this
+    //  }
 
     //behaviour
 
@@ -54,7 +74,7 @@ int main()
 
     // dynamicially
 
-    Animal*suresh=new Animal;
+    // Animal*suresh=new Animal;
 
     // (*suresh).age=15;
     // (*suresh).type="biillii";
@@ -62,11 +82,17 @@ int main()
 
     //alternate method
 
-    suresh->age=17;
-    suresh->type="babay";
+    // suresh->age=17;
+    // suresh->type="babay";
 
-    suresh->eat();
-    suresh->sleep();
+    // suresh->eat();
+    // suresh->sleep();
+    
+
+    // construcotr called 
+
+    Animal a(10);
+    Animal*b=new Animal(100);
 
 
 
