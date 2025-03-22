@@ -1,0 +1,1 @@
+curr->prev = forward;
