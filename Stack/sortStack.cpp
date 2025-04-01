@@ -15,10 +15,9 @@ void insertSorted(stack<int> &s, int target)
     int topElement = s.top();
     s.pop();
 
-    // Recursive call to insert in sorted order
+   
     insertSorted(s, target);
 
-    // Push the top element back
     s.push(topElement);
 }
 
