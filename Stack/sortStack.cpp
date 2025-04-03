@@ -2,7 +2,6 @@
 #include <stack>
 using namespace std;
 
-// Function to insert element into sorted stack
 void insertSorted(stack<int> &s, int target)
 {
     // Base case: If the stack is empty or top element is smaller
@@ -21,7 +20,7 @@ void insertSorted(stack<int> &s, int target)
     s.push(topElement);
 }
 
-// Function to sort the stack using recursion
+
 void sortStack(stack<int> &s)
 {
     // Base case: If the stack is empty
