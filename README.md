@@ -28,5 +28,7 @@ This repository contains clean and well-commented **C++ solutions** for popular 
 
 - Clone the repo:
   ```bash
-  git clone https://github.com/whomimohshukla/c-
-  cd cpp-leetcode
+  git clone https://github.com/whomimohshukla/cpp and-leetcode-questions-practise
+
+  cd cpp and-leetcode-questions-practise
+
